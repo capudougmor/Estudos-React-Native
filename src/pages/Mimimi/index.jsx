@@ -1,12 +1,14 @@
 import React from 'react'
 
-// import { Container } from './styles'
+
+import { Container, Title, Input } from './styles'
 
 function Mimimi() {
   return (
-    <>
-      
-    </>
+    <Container>
+      <Title>Exemple</Title>
+      <Input placeholder="Digite seu mimimi"></Input>
+    </Container>
   )
 }
 
