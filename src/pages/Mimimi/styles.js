@@ -11,6 +11,7 @@ export const Body = styled.View`
 export const Title = styled.Text`
   font-size: 30;
   color: #fff;
+  margin-bottom:20;
 `;
 
 export const InputArea = styled.View`
@@ -29,7 +30,7 @@ export const Input = styled.TextInput`
 `;
 
 export const Area = styled.View`
-  margin-top: 20;
+  margin-top: 40;
 `
 
 export const Text1 = styled.Text`
