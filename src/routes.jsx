@@ -5,12 +5,13 @@ import { createStackNavigator } from '@react-navigation/stack'
 const { Navigator, Screen } = createStackNavigator()
 
 import Mimimi from './pages/Mimimi'
+import UseState from './pages/UseState';
 
 const Routes = () => {
   return(
     <NavigationContainer>
       <Navigator screenOptions={{ headerShown: false }}>
-        <Screen name="Mimimi" component={Mimimi} />
+        <Screen name="Mimimi" component={UseState} />
       </Navigator>
     </NavigationContainer>
   )
