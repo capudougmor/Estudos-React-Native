@@ -33,6 +33,12 @@ export const Area = styled.View`
   margin-top: 40;
 `
 
+export const Image = styled.Image`
+  width: 300;
+  height: 300;
+  marginTop: -70;
+`
+
 export const Text1 = styled.Text`
   font-size: 25;
   color: white;

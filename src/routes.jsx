@@ -11,7 +11,7 @@ const Routes = () => {
   return(
     <NavigationContainer>
       <Navigator screenOptions={{ headerShown: false }}>
-        <Screen name="Mimimi" component={UseState} />
+        <Screen name="Mimimi" component={Mimimi} />
       </Navigator>
     </NavigationContainer>
   )
