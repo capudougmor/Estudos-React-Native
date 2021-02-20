@@ -5,29 +5,20 @@ import { createStackNavigator } from '@react-navigation/stack'
 const { Navigator, Screen } = createStackNavigator()
 
 import Mimimi from './pages/Mimimi'
-import UseState from './pages/UseState';
-import UserList from './pages/Crud/Views/UserList'
-import UserForm from './pages/Crud/Views/UserForm'
+import UseState from './pages/UseState'
+import App from './pages/Crud/App'
 
 const Routes = () => {
   return(
     <NavigationContainer>
         <Navigator 
-            initialRouteName="UserList"
-            screenOptions={{ headerShown: false }}
+            initialRouteName="App"
         >
             <Screen name="Mimimi" component={UseState} />
-            <Screen name="UserList" component={UserList} />
-            <Screen name="UserForm" component={UserForm} />
+            <Screen name="App" component={App} />
         </Navigator>
     </NavigationContainer>
   )
-}
-
-const screenOptions = {
-    headerStyle: {
-        
-    }
 }
 
 export default Routes
