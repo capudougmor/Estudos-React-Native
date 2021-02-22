@@ -4,7 +4,7 @@ export const Body = styled.View`
   flex: 1;
   background: #8B10AE;
   padding-top: 30;
-  flex-direction: columm;
+  flex-direction: column;
   align-items: center;
 `;
 
@@ -19,14 +19,16 @@ export const InputArea = styled.View`
 `;
 
 export const Input = styled.TextInput`
-  font-size: 24;
+  text-align: center;
+  font-size: 24px;
   color: #000;
-  border-width: 1;
+  border-width: 1px;
   border-color: #999;
   background-color: #eee;
-  height: 50;
-  border-radius: 10;
-  margin-inline: 10;
+  height: 50px;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
 `;
 
 export const Area = styled.View`
@@ -34,9 +36,9 @@ export const Area = styled.View`
 `
 
 export const Image = styled.Image`
-  width: 300;
-  height: 300;
-  marginTop: -70;
+  width: 300px;
+  height: 300px;
+  margin-top: -70px;
 `
 
 export const Text1 = styled.Text`
