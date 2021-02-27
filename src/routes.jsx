@@ -8,18 +8,20 @@ import Mimimi from './pages/Mimimi'
 import UseState from './pages/UseState'
 import App from './pages/Crud/App'
 import WaterCounter from './pages/WaterCounter/Index'
+import { Adivinhe } from './pages/Adivinhe'
 
 const Routes = () => {
   return(
     <NavigationContainer>
         <Navigator 
-            initialRouteName="WaterCounter"
+            initialRouteName="Adivinhe"
             screenOptions={{headerShown: false}}
         >
             <Screen name="Mimimi" component={Mimimi} />
             <Screen name="App" component={App} />
             <Screen name="UseState" component={UseState} />
             <Screen name="WaterCounter" component={WaterCounter} />
+            <Screen name="Adivinhe" component={Adivinhe} />
         </Navigator>
     </NavigationContainer>
   )
