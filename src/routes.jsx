@@ -11,18 +11,18 @@ import WaterCounter from './pages/WaterCounter/Index'
 import { Adivinhe } from './pages/Adivinhe'
 
 const Routes = () => {
-  return(
+  return (
     <NavigationContainer>
-        <Navigator 
-            initialRouteName="Adivinhe"
-            screenOptions={{headerShown: false}}
-        >
-            <Screen name="Mimimi" component={Mimimi} />
-            <Screen name="App" component={App} />
-            <Screen name="UseState" component={UseState} />
-            <Screen name="WaterCounter" component={WaterCounter} />
-            <Screen name="Adivinhe" component={Adivinhe} />
-        </Navigator>
+      <Navigator
+        initialRouteName="Adivinhe"
+        screenOptions={{ headerShown: false }}
+      >
+        <Screen name="Mimimi" component={Mimimi} />
+        <Screen name="App" component={App} />
+        <Screen name="UseState" component={UseState} />
+        <Screen name="WaterCounter" component={WaterCounter} />
+        <Screen name="Adivinhe" component={Adivinhe} />
+      </Navigator>
     </NavigationContainer>
   )
 }
