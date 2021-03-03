@@ -30,16 +30,18 @@ export const Hand = styled.Image`
     width: 200px;
     height: 350px;
     margin-top: 0px;
+    border-radius: 4px;    
 `
 
 export const TextInput = styled.TextInput`
     width: 200px;
-    height:40px;
-    float: left;
-    text-align: center;
-    font-size: 30px;
-    line-height: 100px;
+
+    margin: 10px;
+    padding: 10px;
+    font-size: 24px;
     background-color: #eee;
+
+    border-radius: 4px;    
 `
 
 export const N1 = styled.Text`
@@ -50,10 +52,13 @@ export const N1 = styled.Text`
     font-size: 30px;
     line-height: 100px;
     background-color: #eee;
-`
-
+    `
+    
 export const Button = styled.Button`
     height: 40xp;
+    width: 90px;
+
+    border-radius: 10px;
 `
 
 

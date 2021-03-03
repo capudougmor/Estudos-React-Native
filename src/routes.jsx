@@ -9,12 +9,13 @@ import UseState from './pages/UseState'
 import App from './pages/Crud/App'
 import WaterCounter from './pages/WaterCounter/Index'
 import { Adivinhe } from './pages/Adivinhe'
+import Lista from './pages/Listas'
 
 const Routes = () => {
   return (
     <NavigationContainer>
       <Navigator
-        initialRouteName="Adivinhe"
+        initialRouteName="Lista"
         screenOptions={{ headerShown: false }}
       >
         <Screen name="Mimimi" component={Mimimi} />
@@ -22,6 +23,7 @@ const Routes = () => {
         <Screen name="UseState" component={UseState} />
         <Screen name="WaterCounter" component={WaterCounter} />
         <Screen name="Adivinhe" component={Adivinhe} />
+        <Screen name="Lista" component={Lista} />
       </Navigator>
     </NavigationContainer>
   )
