@@ -46,8 +46,10 @@ function WaterCounter() {
         </InfoArea>
 
         <PctArea>
-          <PctTexto>{ptc}%</PctTexto>
-          <Button title={'Beber 200ml'} onPress={atualizar} />
+          {ptc !== 0 &&
+            <PctTexto>{ptc}%</PctTexto>
+          }
+          <Button title={ptc == 0 ? 'Beber 200ml' : 'Beber agua'} onPress={atualizar} />
         </PctArea>
 
       </Image>

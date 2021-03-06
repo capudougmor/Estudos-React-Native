@@ -6,7 +6,6 @@ const { Navigator, Screen } = createStackNavigator()
 
 import Mimimi from './pages/Mimimi'
 import UseState from './pages/UseState'
-import App from './pages/Crud/App'
 import WaterCounter from './pages/WaterCounter/Index'
 import { Adivinhe } from './pages/Adivinhe'
 import Lista from './pages/Listas'
@@ -19,7 +18,6 @@ const Routes = () => {
         screenOptions={{ headerShown: false }}
       >
         <Screen name="Mimimi" component={Mimimi} />
-        <Screen name="App" component={App} />
         <Screen name="UseState" component={UseState} />
         <Screen name="WaterCounter" component={WaterCounter} />
         <Screen name="Adivinhe" component={Adivinhe} />
