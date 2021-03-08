@@ -7,13 +7,13 @@ export const Page = styled.SafeAreaView`
 export const Scroll = styled.ScrollView`
   width: 200px;
   max-height: 200px; 
-  background-color: red;
+  background-color: #eee;
   `
 
 export const Listagem = styled.FlatList`
-  width: 200px;
-  max-height: 200px; 
-  background-color: red;
+  width: 300px;
+  max-height: 300px; 
+  background-color: #eee;
   `
 
 export const Item = styled.TouchableOpacity`
@@ -26,7 +26,7 @@ export const ItemCheck = styled.View`
   width: 1px;
   height: 1px;
   border-radius: 50%;
-  border: 5px solid #f2f3f5;
+  border: 5px solid #ccc;
   `
   
   export const ItemText = styled.Text`

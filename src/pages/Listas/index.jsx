@@ -3,6 +3,7 @@ import React from 'react'
 import { Page, Item, ItemText, Scroll, ItemCheck, Listagem } from './styles'
 import lista from '../../assets/listaScrol'
 import ListItem from './components/ListaItem'
+import AddItemArea from './components/AddItemArea'
 
 export default function Lista() {
   return (
@@ -17,6 +18,7 @@ export default function Lista() {
           )
         })}
       </Scroll> */}
+      <AddItemArea />
       <Listagem 
         data={lista}
         renderItem={({item})=><ListItem data={item}/>}
