@@ -16,9 +16,11 @@ export const Listagem = styled.FlatList`
   background-color: #eee;
   `
 
-export const Item = styled.TouchableOpacity`
-  padding: 10px;
+export const Item = styled.TouchableHighlight`
+  padding: 0 10px;
+  height: 50px;
   flex-direction: row;
+  align-items: center;
 `
 
 export const ItemCheck = styled.View`

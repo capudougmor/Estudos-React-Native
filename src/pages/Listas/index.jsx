@@ -1,8 +1,11 @@
 import React, {useState} from 'react'
+import { SwipeListView } from 'react-native-swipe-list-view'
 
 import { Page, Item, ItemText, Scroll, ItemCheck, Listagem } from './styles'
+
 import lista from '../../assets/listaScrol'
 import ListItem from './components/ListaItem'
+import ListaItemSwipe from './components/ListaItemSwipe'
 import AddItemArea from './components/AddItemArea'
 import AddItemArea2 from './components/AddItemArea2'
 
@@ -38,10 +41,12 @@ export default function Lista() {
       </Scroll> */}
       {/* <AddItemArea items={items} setItems={setItems} /> */}
       <AddItemArea2 onAdd={addNewItem} />
-      <Listagem 
+      <SwipeListView 
         data={items}
         renderItem={({item, index})=><ListItem onPress={() => toggleDone(index)} data={item}/>}
-        keyExtractor={item => item.nome}
+        renderHiddenItem={({item, index}) => <ListaItemSwipe />}
+        leftActivationValue={50}
+        rightActivationValue={-50}
       />
     </Page>
   )
