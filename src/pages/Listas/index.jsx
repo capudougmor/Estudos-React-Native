@@ -18,6 +18,12 @@ export default function Lista() {
     setItems(newItems)
   }
 
+  const toggleDone = (index) => {
+    let newItems = [...items]
+    newItems[index].done = !newItems[index].done
+    setItems(newItems)
+  }
+
   return (
     <Page>
       {/* <Scroll>
@@ -34,7 +40,7 @@ export default function Lista() {
       <AddItemArea2 onAdd={addNewItem} />
       <Listagem 
         data={items}
-        renderItem={({item})=><ListItem data={item}/>}
+        renderItem={({item, index})=><ListItem onPress={() => toggleDone(index)} data={item}/>}
         keyExtractor={item => item.nome}
       />
     </Page>

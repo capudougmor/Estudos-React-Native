@@ -27,6 +27,7 @@ export const ItemCheck = styled.View`
   height: 1px;
   border-radius: 50%;
   border: 5px solid #ccc;
+  background-color: ${props=>props.done ? '#01FF70' : 'transparent'}
   `
   
   export const ItemText = styled.Text`

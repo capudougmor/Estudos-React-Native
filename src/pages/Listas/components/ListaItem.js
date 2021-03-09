@@ -2,12 +2,12 @@ import React from 'react'
 
 import { Item, ItemText, ItemCheck } from '../styles'
 
-export default (props) => {
+export default ({data, onPress}) => {
   return (
-    <Item onPress={() => {}} activeOpacity={0.8}>
+    <Item onPress={onPress} activeOpacity={0.8}>
       <>
-        <ItemText>{props.data.task}</ItemText>
-        <ItemCheck></ItemCheck>
+        <ItemText>{data.task} - {data.done.toString()} </ItemText>
+        <ItemCheck done={data.done} ></ItemCheck>
       </>
     </Item>
   )
