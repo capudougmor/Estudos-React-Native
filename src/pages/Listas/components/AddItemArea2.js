@@ -20,14 +20,10 @@ export default (props) => {
 
   const handleSubmit = () => {
     if(item.trim() != '') {
-      let items = [...props.items]
-      items.push({
-        task: item,
-        done: false
-      })
-      props.setItems(items)
+      props.onAdd(item)
+      setItem('');
     }
-    setItem('')    
+
   }
 
   return (
@@ -42,3 +38,4 @@ export default (props) => {
     </AddItemArea>
   )
 }
+ 

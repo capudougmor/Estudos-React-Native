@@ -18,6 +18,7 @@ function Mimimi() {
     newText = newText.replace(/(ú|ù|û)/g, 'i')
     setText(text)
     setText2(newText.toUpperCase())
+    setText('')
   }
 
   return (
