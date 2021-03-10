@@ -34,8 +34,8 @@ function Mimimi() {
       <Area>
         <Text1>{text.toUpperCase()}</Text1>
         <Image 
-            source={require('../images/mimimi.jpg')}
-            resizeMode="cover"
+          source={require('../images/mimimi.jpg')}
+          resizeMode="cover"
         />
         <Text2>{text2}</Text2>
       </Area>

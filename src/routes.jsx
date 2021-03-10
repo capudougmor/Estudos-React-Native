@@ -9,12 +9,13 @@ import UseState from './pages/UseState'
 import WaterCounter from './pages/WaterCounter/Index'
 import { Adivinhe } from './pages/Adivinhe'
 import Lista from './pages/Listas'
+import Gerador from './pages/Gerador/Index'
 
 const Routes = () => {
   return (
     <NavigationContainer>
       <Navigator
-        initialRouteName="Lista"
+        initialRouteName="Gerador"
         screenOptions={{ headerShown: false }}
       >
         <Screen name="Mimimi" component={Mimimi} />
@@ -22,6 +23,7 @@ const Routes = () => {
         <Screen name="WaterCounter" component={WaterCounter} />
         <Screen name="Adivinhe" component={Adivinhe} />
         <Screen name="Lista" component={Lista} />
+        <Screen name="Gerador" component={Gerador} />
       </Navigator>
     </NavigationContainer>
   )
