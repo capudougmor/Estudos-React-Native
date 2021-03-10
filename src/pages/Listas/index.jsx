@@ -45,8 +45,8 @@ export default function Lista() {
         data={items}
         renderItem={({item, index})=><ListItem onPress={() => toggleDone(index)} data={item}/>}
         renderHiddenItem={({item, index}) => <ListaItemSwipe />}
-        leftActivationValue={50}
-        rightActivationValue={-50}
+        leftOpenValue={50}
+        // rightOpenValue={-50}
       />
     </Page>
   )

@@ -25,7 +25,7 @@ export default function NumberHand() {
         <Objective>Objetivo do jogo</Objective>
 
         <Hand
-          source={require(`../../images/mao${number1}.png`)}
+          source={require(`../../images/mao0.png`)}
           resizeMode="cover"
         />
 

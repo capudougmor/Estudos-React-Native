@@ -4,6 +4,7 @@ import styled from 'styled-components/native'
 const AddItemArea = styled.View`
   background-color: #ccc;
   padding: 10px;
+  margin-top: 30px;
 `
 
 const AddItemInput = styled.TextInput`
