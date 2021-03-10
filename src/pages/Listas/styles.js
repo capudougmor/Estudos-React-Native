@@ -16,24 +16,4 @@ export const Listagem = styled.FlatList`
   background-color: #eee;
   `
 
-export const Item = styled.TouchableHighlight`
-  padding: 0 10px;
-  height: 50px;
-  flex-direction: row;
-  align-items: center;
-`
-
-export const ItemCheck = styled.View`
-  padding: 5px;
-  width: 1px;
-  height: 1px;
-  border-radius: 50%;
-  border: 5px solid #ccc;
-  background-color: ${props=>props.done ? '#01FF70' : 'transparent'}
-  `
-  
-  export const ItemText = styled.Text`
-  font-size: 15px;
-  flex: 1;
-`
 

@@ -27,6 +27,13 @@ export default function Lista() {
     setItems(newItems)
   }
 
+  const deleteItem =(index) => {
+    let newItems = [...items]
+    newItems = newItems.filter((it, newIndex) => newIndex!=index)
+
+    setItems(newItems)
+  }
+
   return (
     <Page>
       {/* <Scroll>
@@ -44,9 +51,10 @@ export default function Lista() {
       <SwipeListView 
         data={items}
         renderItem={({item, index})=><ListItem onPress={() => toggleDone(index)} data={item}/>}
-        renderHiddenItem={({item, index}) => <ListaItemSwipe />}
-        leftActivationValue={50}
-        rightActivationValue={-50}
+        renderHiddenItem={({item, index}) => <ListaItemSwipe onDelete={() => deleteItem(index)} />}
+        leftOpenValue={50}
+        disableLeftSwipe={true}
+        // rightOpenValue={-50}
       />
     </Page>
   )
