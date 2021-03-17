@@ -40,7 +40,7 @@ export default function Lista() {
         renderItem={({item, index})=><ListItem onPress={() => toggleDone(index)} data={item}/>}
         renderHiddenItem={({item, index}) => <ListaItemSwipe onDelete={() => deleteItem(index)} />}
         leftOpenValue={50}
-        keyExtractor={items.index}
+        keyExtractor={(item) => item.id}
         disableLeftSwipe={true}
         // rightOpenValue={-50}
       />
