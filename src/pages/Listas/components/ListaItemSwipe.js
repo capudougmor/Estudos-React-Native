@@ -23,3 +23,4 @@ export default function ListaItemSwipe(props) {
     </Container>
   )
 }
+   

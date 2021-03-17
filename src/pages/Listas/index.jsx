@@ -1,12 +1,10 @@
 import React, {useState} from 'react'
 import { SwipeListView } from 'react-native-swipe-list-view'
+import styled from 'styled-components/native'
 
-import { Page, Item, ItemText, Scroll, ItemCheck, Listagem } from './styles'
-
-import lista from '../../assets/listaScrol'
+import lista from './assets/listaScrol'
 import ListItem from './components/ListaItem'
 import ListaItemSwipe from './components/ListaItemSwipe'
-import AddItemArea from './components/AddItemArea'
 import AddItemArea2 from './components/AddItemArea2'
 
 export default function Lista() {
@@ -36,26 +34,20 @@ export default function Lista() {
 
   return (
     <Page>
-      {/* <Scroll>
-        {lista.map((item, index) => {
-          return (
-            <Item key={index} activeOpacity={0.4} underlayColor="transparent">
-              <ItemText>{item.task} </ItemText>
-              <ItemCheck></ItemCheck>
-            </Item>
-          )
-        })}
-      </Scroll> */}
-      {/* <AddItemArea items={items} setItems={setItems} /> */}
       <AddItemArea2 onAdd={addNewItem} />
       <SwipeListView 
         data={items}
         renderItem={({item, index})=><ListItem onPress={() => toggleDone(index)} data={item}/>}
         renderHiddenItem={({item, index}) => <ListaItemSwipe onDelete={() => deleteItem(index)} />}
         leftOpenValue={50}
+        keyExtractor={items.index}
         disableLeftSwipe={true}
         // rightOpenValue={-50}
       />
     </Page>
   )
 }
+
+const Page = styled.SafeAreaView`
+  flex: 1;
+`

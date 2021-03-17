@@ -15,7 +15,7 @@ const Routes = () => {
   return (
     <NavigationContainer>
       <Navigator
-        initialRouteName="Gerador"
+        initialRouteName="Lista"
         screenOptions={{ headerShown: false }}
       >
         <Screen name="Mimimi" component={Mimimi} />
