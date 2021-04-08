@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { SwipeListView } from 'react-native-swipe-list-view'
 import styled from 'styled-components/native'
+import uuid from 'uuid/v4'
 
 import lista from './assets/listaScrol'
 import ListItem from './components/ListaItem'
@@ -13,6 +14,7 @@ export default function Lista() {
   const addNewItem = (txt) => {
     let newItems = [...items]
     newItems.push({
+      id: uuid(),
       task: txt,
       done: false
     })

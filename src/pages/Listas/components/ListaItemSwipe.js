@@ -11,14 +11,15 @@ const Container = styled.TouchableHighlight`
 `
 
 const Icon = styled(Icons)`
- color: #00ff00;
+  align-self: flex-start;
+  padding-left: 12px;
 `
 
 export default function ListaItemSwipe(props) {
   return (
     <Container onPress={props.onDelete} underlayColor="#DDD" >
       <>
-        <Icon name="menu"/>
+        <Icon name="delete" color='#fff' size={26}/>
       </>
     </Container>
   )

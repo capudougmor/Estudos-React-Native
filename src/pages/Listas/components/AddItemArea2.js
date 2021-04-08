@@ -21,10 +21,9 @@ export default (props) => {
 
   const handleSubmit = () => {
     if(item.trim() != '') {
-      props.onAdd(item)
+      props.onAdd(item.trim())
       setItem('');
     }
-
   }
 
   return (
