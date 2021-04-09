@@ -12,8 +12,8 @@ import Modal from './components/Modal'
 
 export default function Lista() {
   const [items, setItems] = useState(lista)
+  const [modalTitle, setModalTitle] = useState('')
   const [modalVisible, setModalVisible] = useState(false)
-
 
   const addNewItem = (txt) => {
     let newItems = [...items]
@@ -52,9 +52,11 @@ export default function Lista() {
     const storage = await AsyncStorage.setItem('@items', JSON.stringify(newItems))
   }
 
-  const handleModal = () => {
+  const handleShowModal = () => {
+    setModalTitle("Titulo aberto")
     setModalVisible(true)
   }
+
 
   useEffect(() => {
     getItems()
@@ -62,12 +64,16 @@ export default function Lista() {
 
   return (
     <Page>
-      <Modal modalVisible={modalVisible} >
+      <Modal
+        title={modalTitle}
+        visible={modalVisible}
+        visibleAction={setModalVisible}
+      >
         <Button title="Salvar" onPress={saveItems} />
       </Modal>
       <AddItemArea2 onAdd={addNewItem} />
       <Button title="Salvar" onPress={saveItems} />
-      <Button title="Mostrar Modal" onPress={handleModal} />
+      <Button title="Mostrar Modal" onPress={handleShowModal} />
       <SwipeListView
         data={items}
         renderItem={({ item, index }) => <ListItem onPress={() => toggleDone(index)} data={item} />}
@@ -87,4 +93,5 @@ const Page = styled.SafeAreaView`
 
 const Button = styled.Button`
   width: 100%;
+  margin: 30px;
 `
