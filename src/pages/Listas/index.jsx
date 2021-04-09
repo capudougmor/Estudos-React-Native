@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { SwipeListView } from 'react-native-swipe-list-view'
 import styled from 'styled-components/native'
 import uuid from 'uuid/v4'
@@ -8,9 +8,12 @@ import lista from './assets/listaScrol'
 import ListItem from './components/ListaItem'
 import ListaItemSwipe from './components/ListaItemSwipe'
 import AddItemArea2 from './components/AddItemArea2'
+import Modal from './components/Modal'
 
 export default function Lista() {
   const [items, setItems] = useState(lista)
+  const [modalVisible, setModalVisible] = useState(false)
+
 
   const addNewItem = (txt) => {
     let newItems = [...items]
@@ -30,23 +33,27 @@ export default function Lista() {
 
   const deleteItem = async (index) => {
     let newItems = [...items]
-    newItems = newItems.filter((it, newIndex) => newIndex!=index)    
+    newItems = newItems.filter((it, newIndex) => newIndex != index)
     setItems(newItems)
   }
-  
+
   const getItems = async () => {
     try {
       const itemsSaved = await AsyncStorage.getItem('@items')
       const parsed = JSON.parse(itemsSaved)
       setItems(parsed)
-    } catch(error) {
+    } catch (error) {
       alert(error)
     }
-  }  
-  
+  }
+
   const saveItems = async () => {
     let newItems = [...items]
     const storage = await AsyncStorage.setItem('@items', JSON.stringify(newItems))
+  }
+
+  const handleModal = () => {
+    setModalVisible(true)
   }
 
   useEffect(() => {
@@ -55,16 +62,20 @@ export default function Lista() {
 
   return (
     <Page>
+      <Modal modalVisible={modalVisible} >
+        <Button title="Salvar" onPress={saveItems} />
+      </Modal>
       <AddItemArea2 onAdd={addNewItem} />
       <Button title="Salvar" onPress={saveItems} />
-      <SwipeListView 
+      <Button title="Mostrar Modal" onPress={handleModal} />
+      <SwipeListView
         data={items}
-        renderItem={({item, index})=><ListItem onPress={() => toggleDone(index)} data={item}/>}
-        renderHiddenItem={({item, index}) => <ListaItemSwipe onDelete={() => deleteItem(index)} />}
+        renderItem={({ item, index }) => <ListItem onPress={() => toggleDone(index)} data={item} />}
+        renderHiddenItem={({ item, index }) => <ListaItemSwipe onDelete={() => deleteItem(index)} />}
         leftOpenValue={50}
         keyExtractor={(item) => item.id}
         disableLeftSwipe={true}
-        // rightOpenValue={-50}
+      // rightOpenValue={-50}
       />
     </Page>
   )
