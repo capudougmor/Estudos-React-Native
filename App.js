@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar'
+import { StatusBar, SafeAreaView } from 'react-native'
 import React from 'react'
 import { AppLoading } from 'expo'
 
@@ -8,7 +8,12 @@ export default function App() {
   return (
     <>
       <Routes/>
-      <StatusBar style="light" />
+      <StatusBar 
+        style="light"
+        backgroundColor="#00ff00"
+        hidden={false}
+        animated={true}
+      />
     </>
   );
 }

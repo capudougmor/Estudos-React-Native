@@ -93,5 +93,5 @@ const Page = styled.SafeAreaView`
 
 const Button = styled.Button`
   width: 100%;
-  margin: 30px;
+  margin: 30px 20px 30px;
 `
