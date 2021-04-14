@@ -12,12 +12,13 @@ import Lista from './pages/Listas'
 import Gerador from './pages/Gerador/Index'
 import Filmes from './pages/FilmesEmCartas'
 import Posts from './pages/Posts'
+import LoginSimples from './pages/LoginSimples'
 
 const Routes = () => {
   return (
     <NavigationContainer>
       <Navigator
-        initialRouteName="Filmes"
+        initialRouteName="LoginSimples"
         screenOptions={{ headerShown: false }}
       >
         <Screen name="Mimimi" component={Mimimi} />
@@ -28,6 +29,7 @@ const Routes = () => {
         <Screen name="Gerador" component={Gerador} />
         <Screen name="Filmes" component={Filmes} />
         <Screen name="Posts" component={Posts} />
+        <Screen name="LoginSimples" component={LoginSimples} />
       </Navigator>
     </NavigationContainer>
   )
