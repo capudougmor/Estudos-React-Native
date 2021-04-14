@@ -11,6 +11,7 @@ import { Adivinhe } from './pages/Adivinhe'
 import Lista from './pages/Listas'
 import Gerador from './pages/Gerador/Index'
 import Filmes from './pages/FilmesEmCartas'
+import Posts from './pages/Posts'
 
 const Routes = () => {
   return (
@@ -26,6 +27,7 @@ const Routes = () => {
         <Screen name="Lista" component={Lista} />
         <Screen name="Gerador" component={Gerador} />
         <Screen name="Filmes" component={Filmes} />
+        <Screen name="Posts" component={Posts} />
       </Navigator>
     </NavigationContainer>
   )
