@@ -5,8 +5,8 @@ import styled from 'styled-components/native'
 
 function Posts() {
 
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [email, setEmail] = useState('suporte@b7web.com.br')
+  const [password, setPassword] = useState('1234')
   const [status, setStatus] = useState('')
   const [showCupon, setShowCupon] = useState(true)
 
@@ -17,7 +17,7 @@ function Posts() {
       method: 'POST',
       body: JSON.stringify({email, password}),
       headers: {
-          'Content-Type': 'application/json'
+          'content-Type': 'application/json'
         }
     })
     setShowCupon(false)
@@ -34,7 +34,7 @@ function Posts() {
   return (
     <Container>
 
-      <InputLabel>DESCONTO ULTRABLASTER</InputLabel>
+      {/* <InputLabel>desconto</InputLabel>
       <Input 
         value={email} 
         onChangeText={e => setEmail(e)} 
@@ -46,7 +46,7 @@ function Posts() {
         onChangeText={e => setPassword(e)} 
         placeholder="Digite sua senha" 
         secureTextEntry={true}
-      />
+      /> */}
 
       <Button onPress={handleVerifyLogin} >
         <ButtonText>Verificar</ButtonText>
