@@ -14,8 +14,9 @@ export default function Gerador() {
 
   const [password, setPassword] = useState()
   const [size, setSize] = useState(5)
+  const [color, setColor] = useState()
 
-    const navigation = useNavigation()
+  const navigation = useNavigation()
 
   function generatePass() {
     let pass = ''
@@ -34,6 +35,12 @@ export default function Gerador() {
     navigation.navigate('UseState', {password})
   }
 
+  function handleUseColor(color) {
+    setColor(color)
+    // navigation.navigate('UseState', {password, color})
+    alert(color)
+  }
+
   return (
     <Container>
       <Logo
@@ -41,6 +48,7 @@ export default function Gerador() {
         resizeMode="cover"
       />
       <Title>{Math.floor(size)} Caracteres</Title>
+      <Title>{color}</Title>
       <TextArea>
         <Slider
           minimumValue={5}
@@ -51,7 +59,7 @@ export default function Gerador() {
           onValueChange={(valor) => setSize(valor.toFixed(0))}
         />
       </TextArea>
-      <Button onPress={generatePass}>
+      <Button onPress={generatePass} color='#00eeff'>
         <ButtonText>Gerar senha</ButtonText>
       </Button>
       {password && (
@@ -60,8 +68,14 @@ export default function Gerador() {
         </TextArea>
       )}
 
-      <Button onPress={handleGoUseState}>
-        <ButtonText>Ir para tela UseState</ButtonText>
+      <Button onPress={()=>handleUseColor(color)} color='#ff2600'>
+        <ButtonText>Escolher esta cor</ButtonText>
+      </Button>
+      <Button onPress={handleUseColor} color='#ffa200'>
+        <ButtonText>Escolher esta cor</ButtonText>
+      </Button>
+      <Button onPress={handleUseColor} color='#51ff00'>
+        <ButtonText>Escolher esta cor</ButtonText>
       </Button>
     </Container>
   )
@@ -96,9 +110,9 @@ const Button = styled.TouchableOpacity`
   height: 50px;
   justify-content: center;
   align-items: center;
-  background-color: #ffa200;
+  background-color: ${props => props.color};
   border-radius: 8px;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 `
 
 const ButtonText = styled(Title)`
