@@ -31,7 +31,10 @@ export default () => {
         name="UseState" 
         component={UseState} 
         options={({route}) => ({
-          title: route.params?.password ?? 'Aqui deve vir a senha'
+          title: route.params?.password ?? 'Aqui deve vir a senha',
+          headerStyle: {
+            backgroundColor: route.params?.color,
+          },
         })}
       />
     </MainStack.Navigator>

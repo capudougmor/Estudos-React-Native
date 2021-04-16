@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components/native'
 
 import Slider from '@react-native-community/slider'
 import Clipboard from 'expo-clipboard'
+import Button2 from "./Button.js";
 
 import { useNavigation } from '@react-navigation/native'
-
-
 
 let charset = 'AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789'
 
@@ -14,8 +13,8 @@ export default function Gerador() {
 
   const [password, setPassword] = useState()
   const [size, setSize] = useState(5)
+  const [colorButon, setColorButon] = useState()
   const [color, setColor] = useState()
-
   const navigation = useNavigation()
 
   function generatePass() {
@@ -35,11 +34,12 @@ export default function Gerador() {
     navigation.navigate('UseState', {password})
   }
 
-  function handleUseColor(color) {
-    setColor(color)
-    // navigation.navigate('UseState', {password, color})
-    alert(color)
+  function handleUseRed(n) {
+    setColor(n).then(()=>{
+      navigation.navigate('UseState', {password, color})
+    })
   }
+
 
   return (
     <Container>
@@ -47,8 +47,7 @@ export default function Gerador() {
         source={require('./images/logo.png')}
         resizeMode="cover"
       />
-      <Title>{Math.floor(size)} Caracteres</Title>
-      <Title>{color}</Title>
+      <Title>{Math.floor(size)} Caracteres{color} </Title>
       <TextArea>
         <Slider
           minimumValue={5}
@@ -59,24 +58,24 @@ export default function Gerador() {
           onValueChange={(valor) => setSize(valor.toFixed(0))}
         />
       </TextArea>
-      <Button onPress={generatePass} color='#00eeff'>
+      <Button2 onPress={generatePass} colorButon='#00eeff'>
         <ButtonText>Gerar senha</ButtonText>
-      </Button>
+      </Button2>
       {password && (
         <TextArea >
           <Password onLongPress={copyPass} >{password}</Password>
         </TextArea>
       )}
 
-      <Button onPress={()=>handleUseColor(color)} color='#ff2600'>
+      <Button2 click={handleUseRed} colorButon='#ff2600'>
         <ButtonText>Escolher esta cor</ButtonText>
-      </Button>
-      <Button onPress={handleUseColor} color='#ffa200'>
+      </Button2>
+      <Button2 onPress={() => setColor('#ffa200')} colorButon='#ffa200'>
         <ButtonText>Escolher esta cor</ButtonText>
-      </Button>
-      <Button onPress={handleUseColor} color='#51ff00'>
+      </Button2>
+      <Button2 onPress={() => setColor('#51ff00')} colorButon='#51ff00'>
         <ButtonText>Escolher esta cor</ButtonText>
-      </Button>
+      </Button2>
     </Container>
   )
 }
@@ -103,16 +102,6 @@ const TextArea = styled.View`
   padding: 15px 0;
   background-color: #fff;
   border-radius: 8px;
-`
-
-const Button = styled.TouchableOpacity`
-  width: 90%;
-  height: 50px;
-  justify-content: center;
-  align-items: center;
-  background-color: ${props => props.color};
-  border-radius: 8px;
-  margin-bottom: 20px;
 `
 
 const ButtonText = styled(Title)`
