@@ -1,20 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View } from 'react-native'
-import { useState } from 'react/cjs/react.development';
-
 import { Button } from './styles';
 
-const Desejo = ({comida}) => {
+import { useRoute } from '@react-navigation/native'
+
+const Desejo = ({senha}) => {
     
     return (
-        <Text>{comida}</Text>
+        <Text>{senha}</Text>
     )
 }
 
-function UseState() {
-    const [ food, setFood] = useState()
-    
+function Usestate() {
     const [ state, setState ] = useState(100)
+
+    const route = useRoute()
+    
+    const senha = route.params.password
     
     const add = () => {
         setTimeout(() => {
@@ -28,9 +30,9 @@ function UseState() {
             <Button title={'Saque: R$ 100,00'} onPress={() => setState(state - 100) }/>
             <Text>R$ {state},00</Text>
             <Text>Hoje voce vai comer</Text>
-            <Desejo comida="Pão"/>
+            <Desejo senha={senha}/>
         </View>
   )
 }
 
-export default UseState;
+export default Usestate;
