@@ -25,5 +25,5 @@ const ButtonColored = styled.TouchableOpacity`
   align-items: center;
   background-color: ${props => props.colorButon};
   border-radius: 8px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 `
