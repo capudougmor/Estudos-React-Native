@@ -5,6 +5,7 @@ const MainStack = createStackNavigator()
 
 import Gerador from '../pages/Gerador/Index.jsx'
 import UseState from '../pages/UseState'
+import FacaUmBolo from '../pages/FacaUmBolo'
 import Button from '../pages/Gerador/Button.js'
 
 
@@ -23,24 +24,43 @@ export default () => {
       headerBackTitleVisible: false,
       headerBackTitle: 'Anterior'
     }}>
-      <MainStack.Screen 
-        name="Gerador" 
-        component={Gerador} 
+
+      <MainStack.Screen
+        name="FacaUmBolo"
+        component={FacaUmBolo}
+        options={{
+          title: "Exercicio",
+          headerTitleAlign: "left",
+          headerStyle: {
+            backgroundColor: '#ccc',
+            height: 50
+          },
+          headerTitleStyle: {
+            fontSize: 16,
+            color: '#000'
+          }
+        }
+        }
+
+      />
+      <MainStack.Screen
+        name="Gerador"
+        component={Gerador}
         options={{
           title: "Gerador de senha",
           headerTitleAling: 'center',
-          headerTitleStyle:{
+          headerTitleStyle: {
             fontSize: 23,
             fontWeight: 'bold',
             color: '#fff'
           }
-        
         }}
       />
-      <MainStack.Screen 
-        name="UseState" 
-        component={UseState} 
-        options={({route}) => ({
+
+      <MainStack.Screen
+        name="UseState"
+        component={UseState}
+        options={({ route }) => ({
           title: route.params?.password ?? 'Aqui deve vir a senha',
           headerTitleAlign: 'center',
           headerStyle: {

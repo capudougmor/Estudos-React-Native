@@ -17,7 +17,7 @@ function Usestate() {
   const [count, setCount] = useState(0)
 
   const navigation = useNavigation()
-  const route = useRoute()
+  const route = useRoute() 
   const senha = route.params.password
 
   const add = () => {
