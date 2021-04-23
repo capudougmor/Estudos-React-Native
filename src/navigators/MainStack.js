@@ -6,6 +6,7 @@ const MainStack = createStackNavigator()
 import Gerador from '../pages/Gerador/Index.jsx'
 import UseState from '../pages/UseState'
 import FacaUmBolo from '../pages/FacaUmBolo'
+import CalcGorgeta from '../pages/CalcGorgeta'
 import Button from '../pages/Gerador/Button.js'
 
 
@@ -26,6 +27,24 @@ export default () => {
     }}>
 
       <MainStack.Screen
+        name="CalcGorgeta"
+        component={CalcGorgeta}
+        options={{
+          title: "Gorgetas",
+          headerTitleAlign: "left",
+          headerStyle: {
+            backgroundColor: '#333',
+            height: 50
+          },
+          headerTitleStyle: {
+            fontSize: 16,
+            color: '#fff'
+          }
+        }
+        }
+      />
+
+      <MainStack.Screen
         name="FacaUmBolo"
         component={FacaUmBolo}
         options={{
@@ -41,8 +60,8 @@ export default () => {
           }
         }
         }
-
       />
+
       <MainStack.Screen
         name="Gerador"
         component={Gerador}
