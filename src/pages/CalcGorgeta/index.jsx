@@ -4,7 +4,7 @@ import { View, Text, FlatList } from 'react-native'
 
 export default function CalcGorgeta() {
 
-  const [bill, setBill] = useState()
+  const [bill, setBill] = useState('')
   const [tip, setTip] = useState(0)
 
   const calc = () => {
@@ -23,7 +23,7 @@ export default function CalcGorgeta() {
         placeholder="Quanto deu a conta?"
         keyboardType="numeric"
         value={bill}
-        onChangeTex={e => setBill(e)}
+        onChangeText={e => setBill(e)}
       />
 
       <CalcButton>
